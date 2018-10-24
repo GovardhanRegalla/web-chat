@@ -1,0 +1,23 @@
+.userList a {
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    cursor: pointer;
+    list-style-type: none;
+    padding: 10px;
+    display: block;
+}
+
+.userList a:hover {
+    background: #e4e1e1;
+}
+
+.userList a.selected {
+    background-color: #CFD8DC !important;
+    color: white;
+}
+.active {
+    background-color: #32CD32;
+}
+.active a{
+    color: #ffffff;
+}

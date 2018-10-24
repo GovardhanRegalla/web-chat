@@ -1,0 +1,27 @@
+<div class="users_chat_wrapper">
+  <div class="user_chat_screen clearfix">
+      <div class="pull-left">
+          <h4><img src="../../assets/user.png" alt="User Image"/>{{ user.user.full_name }}</h4>
+          <h6>{{ user.user.email }}</h6>
+      </div>
+  </div>
+  <!-- <div class="user_chat_screen clearfix">
+    <div class="profilePic pull-left">
+      <img src="https://pm1.narvii.com/6562/980a2dfba5a3d6133964ed1cf9e37574aecf1976_hq.jpg" class="img-responsive" alt="Responsive image" />
+    </div>
+  </div> -->
+  <div class="chat_history">
+    <div *ngFor="let item of chatData">
+      <p [ngClass]="(item.sender_id == loggedInId)?'right-content':'left-content'"><span class="chat-item" >{{item.message}}</span></p>
+    </div>
+  </div>
+  <form #f="ngForm">
+  <div class="type_message form-group">
+      <input type="text" class="form-control" name="message" ngModel id="message" />
+       
+      <a class="send_chat_text" (click)="onEnteredText(user.user.id, f); f.reset();">
+        <span class="glyphicon glyphicon-share-alt"></span>
+      </a>
+    </div>
+  </form>
+</div>

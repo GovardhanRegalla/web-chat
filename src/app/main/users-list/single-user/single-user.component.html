@@ -1,0 +1,10 @@
+<div class="userList" id={{user.user.id}}>
+  <a class="clearfix" (click)="onSelectedUser(user.user.id)">
+    <div class="profilePic pull-left">
+      <!--<img [src]="user.profileImage" class="img-responsive" alt="Responsive image" />-->
+    </div>
+    <div class="pull-left">
+      <h4><img src="../../assets/user.png" alt="User Image"/>{{ user.user.full_name }}</h4>
+    </div>
+  </a>
+</div>

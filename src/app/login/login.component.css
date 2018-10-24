@@ -1,0 +1,14 @@
+.login_wrapper {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.row_space {
+    margin-bottom: 20px;
+}
+.error{
+    color: red;
+}
