@@ -39,13 +39,16 @@ export class UserChatComponent implements OnInit {
       }
       this.userService.getChatId(url, token)
       .subscribe((data: any) => {
-        let chatdialId = data.items[0]._id;
-        let url = this.endpoints.api_endpoint + "/chat/Message.json?chat_dialog_id="+ chatdialId;
-        this.userService.getChatHistory(url,token)
-          .subscribe((data: any) => {debugger;
+        if(data.items.length > 0){
+          let chatdialId = data.items[0]._id;
+          let url = this.endpoints.api_endpoint + "/chat/Message.json?chat_dialog_id="+ chatdialId;
+          this.userService.getChatHistory(url,token)
+            .subscribe((data: any) => {
             this.chatData = data.items;
           });
-        
+        }else{
+          this.chatData = [];
+        }
       });
   }
   // Intializing the dependencies for chat component on loading the chat box.
