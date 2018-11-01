@@ -1,23 +1,23 @@
 <div class="login_wrapper">
-  <form (ngSubmit)="onLogin(f)" #f="ngForm">
-    <div class="row">
-      <div class="col-md-12 row_space">
-        <label for="" class="col-md-6">Username</label>
-        <span class="col-md-6">
-          <input type="text" id="userName" name="username" ngModel class="form form-control" />
-        </span>
-      </div>
-      <div class="col-md-12 row_space">
-        <label for="" class="col-md-6">Password</label>
-        <span class="col-md-6">
-          <input type="password" id="password" name="password" ngModel class="form form-control" />
-        </span>
-      </div>
+  <form (ngSubmit)="validateLogin(formData)" #formData="ngForm">
+    <div>
+      <div class="form-group">
+          <label for="userName">Username</label>
+          <input type="email" id="userName" name="username" ngModel class="form form-control" placeholder="Username">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" ngModel class="form form-control" placeholder="Password">
+        </div>
     </div>
-    <p *ngIf="errorText" class="error">{{errorText}}</p>
     <div class="row">
       <div class="col-md-12 text-center">
-          <button type="submit" class="btn btn-primary" (click)="onLogin(f)">Login</button>
+        <div class="col-md-12 text-center">
+          <p *ngIf="errorMessage" class="error">{{errorMessage}}</p>
+          <button type="submit" class="btn btn-primary" (click)="validateLogin(formData)">Login
+              <img height="20" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGOSURBVGhD7ZrBKkVBHIdPSNKV5A3YKSvvYG/BE0jI3tbGxsYGdTeeQnY8gcLOTigba1KE73ewOGUxc8/8/2fUfPXVndOd23ydM92ae6sIeniIT/iZgW94hYsYxTH+9YFd+4pzGMQIvqAmzepCBgzhESpmRxdCmERNuKtH+bCBWpeCgighxpSQEmJECSkhRpSQkJBRvMFTHNcFQ0xDxvAW9f5ztIwxf7Rm8B6tY1z2iEeM22a3jnELEZYxriHCKsY9RFjERIfo4OECT+rR4KSOiQ5JScqYRsgULji7jM/YNqYR8vAz6NIz1KlILI2QfdTz762Ol7SID1zFQeh0j4gtVECbCBEdMox6tufrUTtSRYjokBTfIyJlhOgkJHWEcA+xiBCuIVYRwi3EMkK4hFhHCPMQjwhhGjKN72gdIczvyDYufb80xW2zW1NCSogRJaSEGFFC/n3IBGrCYz3Kh03Uug7qUSC/x0Z7uJaB63iNWpPuTDArqP9IaWJOXqJ+JYtCJym72M9A7QvdFSKq6gtlqbpowcg25wAAAABJRU5ErkJggg==">
+          </button>
+        </div>
       </div>
     </div>
   </form>

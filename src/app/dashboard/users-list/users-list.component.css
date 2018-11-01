@@ -1,0 +1,18 @@
+.userList {
+    padding: 2px 10px;;
+}
+.contacts-header {
+    color: darkgoldenrod;
+    font-size: 16px;
+    padding: 10px;
+}
+.contacts-header .down-arrow{
+    padding-left: 10px;
+}
+.active{
+    background: cadetblue;
+    color: #ffffff;
+}
+.notify-active{
+    background: #228B22;
+}

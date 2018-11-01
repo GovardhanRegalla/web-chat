@@ -1,0 +1,16 @@
+<div class="users_list">
+    <p class="contacts-header">Contacts List<span class="glyphicon glyphicon-chevron-down down-arrow"></span></p>
+    <div *ngFor="let user of users;let index = index" [class.active]="index==0">
+      <div class="userList" id={{user.user.id}} >
+          <div class="clearfix" (click)="chatwithSelectedUser(user,user.user.id)">
+            <div class="profilePic pull-left">
+            </div>
+            <div class="pull-left">
+              <h4><img src="data:image/png;base64,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"
+                alt="User Image"/>{{ user.user.full_name }}
+              </h4>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>

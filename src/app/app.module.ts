@@ -6,19 +6,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { UsersListComponent } from './main/users-list/users-list.component';
-import { UserChatComponent } from './main/user-chat/user-chat.component';
-import { MainComponent } from './main/main.component';
-import { SingleUserComponent } from './main/users-list/single-user/single-user.component';
+import { UsersListComponent } from './dashboard/users-list/users-list.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    UsersListComponent,
-    UserChatComponent,
-    MainComponent,
-    SingleUserComponent
+    DashboardComponent,
+    UsersListComponent
   ],
   imports: [
     BrowserModule,
