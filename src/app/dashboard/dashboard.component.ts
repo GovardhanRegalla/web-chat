@@ -47,6 +47,10 @@ export class DashboardComponent implements OnInit {
     });
     this._chatHistory.push({'message': value.form.value.message,'sender_id': this._userDetails.id });
   }
+  updateScroll(){
+    var element = document.getElementById("chat-parent");
+    element.scrollTop = element.scrollHeight;
+  }
   fnGetChatHistory(from, to, token){
     var url = this.endpoints.api_endpoint + '//chat/Dialog.json?occupants_ids=';
     if(from > to)
@@ -66,6 +70,7 @@ export class DashboardComponent implements OnInit {
           this.UserDetailService.getChatHistoryContent(url,token)
             .subscribe((data: any) => {
             this._chatHistory = data.items;
+            setTimeout(this.updateScroll,1000);
             this.UserDetailService.chatHistory.emit(this._chatHistory);
           });
         }else{
@@ -111,6 +116,7 @@ export class DashboardComponent implements OnInit {
         this.UserDetailService.receivedCurrentUserChat
         .subscribe((object) => {
           this._chatHistory.push({'message': object.body});
+          setTimeout(this.updateScroll,1000);
         })
   }
 }

@@ -13,7 +13,7 @@
         <p class="col-sm-6 text-left">{{_selectedUser.user.full_name}}<span class="email">({{_selectedUser.user.email}})</span></p>
         <p class="col-sm-6 text-right">Me</p>
       </div>  
-      <div class="conversion-data">
+      <div class="conversion-data" id="chat-parent">
         <div *ngFor="let item of _chatHistory">
           <p *ngIf="item.message" [ngClass]="(item.sender_id == _loggedInUSerId)?'right-align':'left-align'"><span class="chat-item">{{item.message}}</span></p>
         </div>
